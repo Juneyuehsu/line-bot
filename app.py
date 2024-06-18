@@ -56,9 +56,9 @@ def handle_message(event):
             r = 'hi'
         elif msg == 'eat?':
             r = 'yet'
-        elif msd in ['who are you', '你是誰']:
+        elif msg in ['who are you', '你是誰']:
             r = 'robot'
-        elif ['訂位', 'reservation'] in msg:
+        elif '訂位' in msg:
             r = 'did you wanna book a seat?'
 
         line_bot_api = MessagingApi(api_client)
