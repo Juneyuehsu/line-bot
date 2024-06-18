@@ -51,12 +51,18 @@ def callback():
 def handle_message(event):
     with ApiClient(configuration) as api_client:
         msg = event.message.text
-        s = 'eat?'
+        r = 'I dont understand'
+
+        if msg == 'hi':
+            r = 'hi'
+        elif msg == 'eat?'
+            r = 'yet'
+
         line_bot_api = MessagingApi(api_client)
         line_bot_api.reply_message_with_http_info(
             ReplyMessageRequest(
                 reply_token=event.reply_token,
-                messages=[TextMessage(text=s)]
+                messages=[TextMessage(text=r)]
             )
         )
 
