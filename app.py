@@ -52,10 +52,9 @@ def handle_message(event):
     with ApiClient(configuration) as api_client:
         msg = event.message.text
         r = 'I dont understand'
-
         if msg == 'hi':
             r = 'hi'
-        elif msg == 'eat?'
+        elif msg == 'eat?':
             r = 'yet'
 
         line_bot_api = MessagingApi(api_client)
