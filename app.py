@@ -27,7 +27,7 @@ app = Flask(__name__)
 configuration = Configuration(access_token='AOpzWAOcbbH/0LQKIL55ph8VOfklsFEG8Weo8TuA2OUUQYtWmFIAttAxK3lN1BalfAQvqER+/zQgfUKc+w92hTbD9Fz5Lxw/HUbO39Jzl1Ua36lySFKmiGMCtF8n5wnfefQhe18k9OF8/d3T66rUJgdB04t89/1O/w1cDnyilFU=')
 handler = WebhookHandler('6cf61294a2a79e07aacd1c6ca4afbac2')
 
-
+# 網址加/callback 才會執行此function
 @app.route("/callback", methods=['POST'])
 def callback():
     # get X-Line-Signature header value
