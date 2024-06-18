@@ -52,10 +52,14 @@ def handle_message(event):
     with ApiClient(configuration) as api_client:
         msg = event.message.text
         r = 'I dont understand'
-        if msg == 'hi':
+        if msg in ['hi', 'Hi']:
             r = 'hi'
         elif msg == 'eat?':
             r = 'yet'
+        elif msd in ['who are you', '你是誰']:
+            r = 'robot'
+        elif ['訂位', 'reservation'] in msg:
+            r = 'did you wanna book a seat?'
 
         line_bot_api = MessagingApi(api_client)
         line_bot_api.reply_message_with_http_info(
